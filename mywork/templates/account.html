@@ -1,0 +1,54 @@
+    <html lang="en">
+{% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Account Page</title>
+        <link rel="stylesheet" href="{%static 'account.css'%}">
+    </head>
+    <body>
+        {% if user.is_authenticated %}
+        {% if user.username ==  usern%}
+        <div class="navbar">
+            <div class="search-bar">
+                <form class="search-bar" action="/check" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="query" placeholder="Search for accounts..." required>
+                </form>
+            </div>
+            <form action="/logout" method="get">
+                <button type="submit" >Logout</button>
+            </form>
+        </div>
+                <h2> Account Details</h2>
+
+        <div class="container">
+            <form class="user-details"  method = "post" action = "/update">
+                {% csrf_token %}
+               
+            <label class="con-details">Username <span style="display: inline-block; font-size: 18px;margin-top:60px; margin-left: 120px; margin-bottom:30px">{{user.username}}</span></label>       
+                <label class="con-details">Email <span style="display: inline-block; font-size: 18px; margin-left: 170px; margin-bottom:30px">{{user.email}}</span></label>
+<label class="con-details">Password <span style="display: inline-block; font-size: 18px; margin-left: 125px; margin-bottom:30px">*********</span></label>                
+                
+                <button type="submit">Update Details</button>
+            </form>
+        </div>
+        {%else%}
+        <h1>Access Denied</h1>
+        <form action = "/login">
+            <p> Please login with the correct account</p>
+            
+            <button type="submit">Login</button>
+        </form>
+        {%endif%}
+        {%else%} 
+        <h1>Access Denied</h1>
+        <form action = "/login">
+            <p> Please login First</p>
+            <button type="submit">Login</button>
+
+        </form>
+        {%endif%}
+    </body>
+    </html>
+    

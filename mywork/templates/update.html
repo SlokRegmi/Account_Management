@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Account Details</title>
+    <link rel="stylesheet" href="{% static 'account.css' %}">
+</head>
+<body>
+    
+    <div class="navbar">
+        <div class="search-bar">
+            <form class="search-bar" action="/check" method="post">
+                {% csrf_token %}
+                <input type="text" name="query" placeholder="Search for accounts..." required>
+            </form>
+        </div>
+        <form action="/logout" method="get">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+
+    <div class="container" style="height: 450px;">
+        <h2>Update {{ user.username }}'s Account</h2>
+        <form class="user-details" method="post" action="changeup">
+            {% csrf_token %}
+            <label for="username" style="margin-left: 20px;">Username</label>
+            <input type="text" id="username" name="username" value="{{ user.username }}" readonly>
+           
+            <label for="email"style="margin-left: 20px;">Email</label>
+            <input type="email" id="email" name="email" value="{{ user.email }}" >
+            
+            <label for="password"style="margin-left: 20px;">New Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter new password" value="" >
+
+            <label for="confirm_password" style="margin-left: 20px;">Confirm Password</label>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm new password" value="" >
+            
+            <button type="submit">Update Details</button>
+        </form>
+    </div>
+  
+</body>
+</html>

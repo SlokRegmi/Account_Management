@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{name}} Account Details</title>
+<link rel="stylesheet" href="{%static 'search.css'%}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-items">
+            <div class="search-bar">
+                <form class="search-bar" action="/check" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="query" placeholder="Search for accounts..." required>
+                </form>
+                        </div>
+            <form action="/logout" method="get" >
+                <button type="submit" >Logout</button>
+            </form>        </div>
+    </div> 
+    {%if user != "User not found"%}
+    
+    <div class="container" style="height: 250px">
+        <h2 style = " margin-bottom: 40px;"> {{name}}'s Account</h2>
+            <label style="display: block; margin-left: 120px; font-size: 24px;">Username <span style="display: inline-block; font-size: 18px; margin-left: 120px;">{{name}}</span></label>       
+                <label style="font-size: 24px; display: block; margin-left: 120px;">Email <span style="display: inline-block; font-size: 18px; margin-left: 170px; margin-top: 60px;">{{email}}</span></label>
+                       
+           
+        </div>
+    </div>
+    {%else%}
+    <h1>No such account found. Make sure you have wrote correct username</h1>
+    {%endif%}
+  
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+}
+.navbar .search-bar {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+.navbar input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+}
+.navbar button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.container {
+    max-width: 900px;
+    max-height: 384px;
+    margin-top: 30px;
+    margin-left: auto ;
+    margin-right:  auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 40px; ;
+    text-align: left  ;
+    box-shadow: 5 5 500px rgba(0, 0, 0, 0.1);
+}
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.user-details {
+    display: flex;
+    flex-direction: column;
+}
+.user-details label {
+    margin-bottom: 5px;
+}
+.user-details input[type="text"],
+.user-details input[type="email"],
+.user-details input[type="password"] {
+    margin-left: 20px;
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.user-details button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 32px 16px 32px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 234px;
+    font-size: 16px;
+    display: block;
+    margin-left: 333px;
+    margin-top: 30px;
+}
+.user-details button:hover {
+    background-color: #45a049;
+}
+h2{
+text-align: center;
+}
+.con-details{
+
+font-size: 24px;
+font-weight :normal;
+margin-left: 120px;
+margin-bottom: 130px;
+
+display: block; 
+}
+.con-details{
+            
+    font-size: 24px;
+    font-weight :normal;
+    margin-left: 120px;
+    margin-bottom: 130px;
+
+    display: block; 
+}
